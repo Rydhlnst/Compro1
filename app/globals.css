@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: 205 42% 96%;
+  --foreground: 212 30% 14%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 212 30% 14%;
+
+  --primary: 207 46% 24%;
+  --primary-foreground: 205 42% 96%;
+
+  --secondary: 205 34% 58%;
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 52 95% 58%;
+  --accent-foreground: 212 30% 14%;
+
+  --muted: 205 30% 90%;
+  --muted-foreground: 210 15% 40%;
+
+  --border: 205 18% 82%;
+  --ring: 52 95% 58%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-ring: hsl(var(--ring));
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
+}
+
+/* Custom scrollbar */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--secondary)) 0%,
+    hsl(var(--primary)) 100%
+  );
+  border: 2px solid hsl(var(--muted));
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--accent)) 0%,
+    hsl(var(--secondary)) 100%
+  );
+}
+
+*::-webkit-scrollbar-corner {
+  background: hsl(var(--muted));
+}
