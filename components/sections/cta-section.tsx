@@ -6,6 +6,12 @@ import Link from "next/link"
 import { companyProfile } from "@/constants/company-profile"
 import { Button } from "@/components/ui/button"
 
+const showcaseImages = [
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1464082354059-27db6ce50048?auto=format&fit=crop&w=1200&q=80",
+]
+
 export function CtaSection() {
   const showcaseItems = companyProfile.projects.slice(0, 3)
 
@@ -34,7 +40,7 @@ export function CtaSection() {
                 <Link href={`/projects/${item.slug}`} className="block">
                   <div className="relative aspect-[4/3] w-full">
                     <Image
-                      src="/hero-construction.jpg"
+                      src={showcaseImages[index] ?? showcaseImages[0]}
                       alt={item.title}
                       fill
                       className="object-cover"
@@ -56,7 +62,7 @@ export function CtaSection() {
 
         <div className="relative min-h-[420px] bg-primary/80 p-4 sm:min-h-[500px] md:p-6">
           <Image
-            src="/hero-construction.jpg"
+            src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=1800&q=80"
             alt="Contact background"
             fill
             className="object-cover"

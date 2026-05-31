@@ -1,5 +1,6 @@
 import { ArrowUpRight, Building2, CalendarDays, Handshake, ShieldCheck } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 import { companyProfile } from "@/constants/company-profile"
 import { Button } from "@/components/ui/button"
@@ -39,8 +40,11 @@ export function HeroSection() {
             <Button className="h-10 bg-accent px-6 text-accent-foreground hover:bg-accent/90">
               {companyProfile.hero.primaryCta}
             </Button>
-            <Button className="h-10 bg-white/15 px-6 text-primary-foreground hover:bg-white/20">
-              {companyProfile.hero.secondaryCta}
+            <Button
+              asChild
+              className="h-10 bg-white/15 px-6 text-primary-foreground hover:bg-white/20"
+            >
+              <Link href="/projects">{companyProfile.hero.secondaryCta}</Link>
             </Button>
           </div>
           <div className="grid max-w-sm grid-cols-2 gap-6 pt-2">

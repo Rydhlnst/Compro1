@@ -6,13 +6,18 @@ import { companyProfile } from "@/constants/company-profile"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
+const projectImages = [
+  "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?auto=format&fit=crop&w=1200&q=80",
+]
+
 export function FeaturedProjects() {
   const projects = companyProfile.projects.slice(0, 2)
 
   return (
     <section id="projects" className="scroll-mt-28 px-4 py-12 md:px-8 md:py-14">
       <div className="mx-auto grid w-full max-w-6xl gap-4 lg:grid-cols-3">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <Card key={project.title} className="overflow-hidden rounded-none border-none ring-0 shadow-sm">
             <CardContent className="space-y-4 pt-5">
               <div className="flex items-start justify-between gap-4">
@@ -33,7 +38,7 @@ export function FeaturedProjects() {
               </div>
               <div className="relative aspect-[4/5] w-full">
                 <Image
-                  src="/hero-construction.jpg"
+                  src={projectImages[index] ?? projectImages[0]}
                   alt={project.title}
                   fill
                   className="object-cover"

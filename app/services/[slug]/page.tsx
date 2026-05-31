@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react"
@@ -7,9 +8,52 @@ import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { Navbar } from "@/components/sections/navbar"
 import { Footer } from "@/components/sections/footer"
 import { Button } from "@/components/ui/button"
+import { BASE_URL, defaultOgImages } from "@/lib/seo"
 
 export function generateStaticParams() {
   return companyProfile.services.map((service) => ({ slug: service.slug }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const service = companyProfile.services.find((item) => item.slug === slug)
+
+  if (!service) {
+    return {
+      title: "Service Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    }
+  }
+
+  const url = `${BASE_URL}/services/${service.slug}`
+
+  return {
+    title: service.title,
+    description: service.description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: service.title,
+      description: service.description,
+      url,
+      type: "website",
+      images: defaultOgImages,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: service.title,
+      description: service.description,
+      images: [defaultOgImages[0].url],
+    },
+  }
 }
 
 export default async function ServiceDetailPage({

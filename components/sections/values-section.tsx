@@ -24,7 +24,7 @@ export function ValuesSection() {
         <div className="grid gap-6 md:grid-cols-2 md:gap-8">
           <div className="relative min-h-[280px] sm:min-h-[340px] md:min-h-[420px]">
             <Image
-              src="/hero-construction.jpg"
+              src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1500&q=80"
               alt="Modern architecture"
               fill
               className="object-cover"

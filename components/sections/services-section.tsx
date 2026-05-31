@@ -34,7 +34,7 @@ export function ServicesSection() {
 
         <div className="relative min-h-[280px] sm:min-h-[360px] md:min-h-[460px]">
           <Image
-            src="/hero-construction.jpg"
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80"
             alt="Architecture vision"
             fill
             className="object-cover"
@@ -44,7 +44,7 @@ export function ServicesSection() {
           <article className="absolute bottom-4 left-4 w-[190px] bg-background p-3 shadow-xl sm:bottom-6 sm:left-6 sm:w-[220px] md:bottom-8 md:left-8 md:w-[250px]">
             <div className="relative mb-4 aspect-[5/4] w-full">
               <Image
-                src="/hero-construction.jpg"
+                src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80"
                 alt="Corvallis Museum"
                 fill
                 className="object-cover"
